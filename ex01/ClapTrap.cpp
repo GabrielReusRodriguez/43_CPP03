@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 21:47:28 by gabriel           #+#    #+#             */
-/*   Updated: 2024/08/03 01:12:02 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/08/04 01:06:23 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string const name): _max_hit_points(10), _max_energy_points(10)
+ClapTrap::ClapTrap(std::string const name)
 {
 	this->_name= name;
-	this->_energy_points =this->_max_energy_points;
-	this->_hit_points = this->_max_hit_points;
+	this->_energy_points = 10;
+	this->_hit_points = 10;
 	this->_attack_damage = 0;
 	std::cout << "ClapTrap Constructor of " << this->_name <<" called." << std::endl;
 }
@@ -83,8 +83,6 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	if (this->_energy_points > 0)
 	{
 		this->_hit_points += amount;
-		if (this->_hit_points > this->_max_hit_points)
-			this->_hit_points = this->_max_hit_points;
 		this->_energy_points--;
 		std::cout << "ClapTrap " << this->_name << " is repaired, getting " << amount << " points healed!" << std::endl;
 	}
