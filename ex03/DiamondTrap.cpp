@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 01:29:41 by gabriel           #+#    #+#             */
-/*   Updated: 2024/08/04 02:41:19 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/08/05 22:16:27 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,13 @@
 
 #include "DiamondTrap.hpp"
 
-/*
-DiamondTrap::DiamondTrap(std::string name): FragTrap(name + "_clap_name")
-{
-	this->_name = name;
-	this->setEnergyPoints(ScavTrap::getEnergyPoints());
-	this->setHitPoints(FragTrap::getHitPoints());
-	this->setAttackDamage(FragTrap::getAttackDamage());
-	std::cout << "DiamondTrap Constructor of " << this->getName() <<" called." << std::endl;
-	
-}
-*/
 
-DiamondTrap::DiamondTrap(std::string name): FragTrap(name + "_clap_name"), ScavTrap(name + "_clap_name")
+DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name"), FragTrap(name + "_clap_name"), ScavTrap(name + "_clap_name")
 {
 	this->_name = name;
-	this->ScavTrap::setEnergyPoints(ScavTrap::getEnergyPoints());
-	this->ScavTrap::setHitPoints(FragTrap::getHitPoints());
-	this->ScavTrap::setAttackDamage(FragTrap::getAttackDamage());
+	this->setEnergyPoints(SCAVTRAP_DEFAULT_ENERGYPOINTS);
+	this->setHitPoints(FRAGTRAP_DEFAULT_HITPOINTS);
+	this->setAttackDamage(FRAGTRAP_DEFAULT_ATTACKDAMAGE);
 	std::cout << "DiamondTrap Constructor of " << this->_name<<" called." << std::endl;
 	
 }
@@ -44,7 +33,7 @@ DiamondTrap::~DiamondTrap(void)
 void	DiamondTrap::whoAmI(void)
 {
 	std::cout << "DiamondTrap name: " << this->_name << "." << std::endl;
-	std::cout << "ClapTrap name: " << this->ScavTrap::getName() << "." << std::endl;
+	std::cout << "ClapTrap name: " << this->ClapTrap::getName() << "." << std::endl;
 
 }
 

@@ -1,4 +1,4 @@
-NAME=ex02
+NAME=ex03
 
 CPP_FLAGS = -Wall -Werror -Wextra -std=c++98 -MMD -MP -Wshadow
 SRC_FILES = main	\

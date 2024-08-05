@@ -6,12 +6,16 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 21:47:02 by gabriel           #+#    #+#             */
-/*   Updated: 2024/08/04 01:05:08 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/08/05 22:16:46 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
+
+# define CLAPTRAP_DEFAULT_HITPOINTS 10
+# define CLAPTRAP_DEFAULT_ENERGYPOINTS 10
+# define CLAPTRAP_DEFAULT_ATTACKDAMAGE 0
 
 # include <string>
 

@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 00:56:03 by gabriel           #+#    #+#             */
-/*   Updated: 2024/08/04 01:16:03 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/08/05 22:17:46 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 #include "FragTrap.hpp"
 
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(std::string const name) : ClapTrap(name)
 {
-	this->setAttackDamage(100);
-	this->setEnergyPoints(100);
-	this->setHitPoints(30);	
+	this->setAttackDamage(FRAGTRAP_DEFAULT_ATTACKDAMAGE);
+	this->setEnergyPoints(FRAGTRAP_DEFAULT_ENERGYPOINTS);
+	this->setHitPoints(FRAGTRAP_DEFAULT_HITPOINTS);	
 	std::cout << "FragTrap Constructor of " << this->getName() <<" called." << std::endl;
 }
 

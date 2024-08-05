@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 23:11:44 by gabriel           #+#    #+#             */
-/*   Updated: 2024/08/04 02:22:55 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/08/05 22:17:27 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+ScavTrap::ScavTrap(std::string const name) : ClapTrap(name)
 {
-	this->setHitPoints(100);
-	this->setEnergyPoints(50);
-	this->setAttackDamage(20);
+	this->setHitPoints(SCAVTRAP_DEFAULT_HITPOINTS);
+	this->setEnergyPoints(SCAVTRAP_DEFAULT_ENERGYPOINTS);
+	this->setAttackDamage(SCAVTRAP_DEFAULT_ATTACKDAMAGE);
 	std::cout << "ScavTrap Constructor of " << this->getName() <<" called." << std::endl;
 }
 
