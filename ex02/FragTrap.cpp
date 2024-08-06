@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 00:56:03 by gabriel           #+#    #+#             */
-/*   Updated: 2024/08/04 01:16:03 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/08/06 22:02:12 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,44 @@
 
 #include "FragTrap.hpp"
 
-
-FragTrap::FragTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(void)
 {
-	this->setAttackDamage(100);
-	this->setEnergyPoints(100);
-	this->setHitPoints(30);	
+	this->setName("");
+	this->setAttackDamage(FRAGTRAP_DEFAULT_ATTACKDAMAGE);
+	this->setEnergyPoints(FRAGTRAP_DEFAULT_ENERGYPOINTS);
+	this->setHitPoints(FRAGTRAP_DEFAULT_HITPOINTS);
+	std::cout << "FragTrap Default Constructor called." << std::endl;
+}
+
+FragTrap::FragTrap(std::string const name) : ClapTrap(name)
+{
+	this->setAttackDamage(FRAGTRAP_DEFAULT_ATTACKDAMAGE);
+	this->setEnergyPoints(FRAGTRAP_DEFAULT_ENERGYPOINTS);
+	this->setHitPoints(FRAGTRAP_DEFAULT_HITPOINTS);	
 	std::cout << "FragTrap Constructor of " << this->getName() <<" called." << std::endl;
+}
+
+FragTrap::FragTrap(FragTrap const &copy) : ClapTrap()
+{
+	this->setName(copy.getName());
+	this->setEnergyPoints(copy.getEnergyPoints());
+	this->setHitPoints(copy.getHitPoints());
+	this->setAttackDamage(copy.getAttackDamage());
+	std::cout << "FragTrap Copy Constructor called." << std::endl;
 }
 
 FragTrap::~FragTrap(void)
 {
 	std::cout << "FragTrap Destructor of " << this->getName() << " called." << std::endl;
+}
+
+void	FragTrap::operator=(FragTrap const &trap)
+{
+	this->setName(trap.getName());
+	this->setAttackDamage(trap.getAttackDamage());
+	this->setEnergyPoints(trap.getEnergyPoints());
+	this->setHitPoints(trap.getHitPoints());
+	std::cout << "FragTrap Equal operator called." << std::endl;
 }
 
 void	FragTrap::highFivesGuys(void)

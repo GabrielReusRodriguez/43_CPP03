@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 21:47:28 by gabriel           #+#    #+#             */
-/*   Updated: 2024/08/04 01:06:23 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/08/06 22:00:10 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,72 @@
 
 #include "ClapTrap.hpp"
 
+/*
+class ClapTrap
+{
+	private:
+		std::string	_name;
+		int			_hit_points;
+		int			_energy_points;
+		int			_attack_damage;
+
+	public:
+		ClapTrap(void);
+		ClapTrap(Claptrap const &copy);
+		ClapTrap(std::string const name);
+		~ClapTrap(void);
+		std::string	getName(void) const;
+		int			getHitPoints(void) const;
+		int			getEnergyPoints(void) const;
+		int			getAttackDamage(void) const;
+		void		setName(std::string const name);
+		void		setHitPoints(int const hit_points);
+		void		setEnergyPoints(int const energy_points);
+		void		setAttackDamage(int const attack_damage);
+		void	attack(const std::string& target);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
+};
+
+void	operator=(ClapTrap &clap1 , ClapTrap &clap2);
+
+*/
+
+ClapTrap::ClapTrap(void)
+{
+	this->setName("");
+	this->setEnergyPoints(CLAPTRAP_DEFAULT_ENERGYPOINTS);
+	this->setHitPoints(CLAPTRAP_DEFAULT_HITPOINTS);
+	this->setAttackDamage(CLAPTRAP_DEFAULT_ATTACKDAMAGE);
+	std::cout << "ClapTrap Default Constructor called." << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string const name)
 {
-	this->_name= name;
-	this->_energy_points = 10;
-	this->_hit_points = 10;
-	this->_attack_damage = 0;
+	this->setName(name);
+	this->setEnergyPoints(CLAPTRAP_DEFAULT_ENERGYPOINTS);
+	this->setHitPoints(CLAPTRAP_DEFAULT_HITPOINTS);
+	this->setAttackDamage(CLAPTRAP_DEFAULT_ATTACKDAMAGE);
 	std::cout << "ClapTrap Constructor of " << this->_name <<" called." << std::endl;
 }
 
-/*
-ClapTrap::ClapTrap(std::string const name): _hit_points(10), _energy_points(10), _attack_damage(0)
+ClapTrap::ClapTrap(ClapTrap const &copy)
 {
-	this->_name= name;
-	std::cout << "ClapTrap Constructor of " << this->_name <<" called." << std::endl;
+	this->setName(copy.getName());
+	this->setEnergyPoints(copy.getEnergyPoints());
+	this->setHitPoints(copy.getHitPoints());
+	this->setAttackDamage(copy.getAttackDamage());
+	std::cout << "ClapTrap Copy Constructor called." << std::endl;
 }
-*/
+
+void	ClapTrap::operator=(ClapTrap const &clap)
+{
+	this->setName(clap.getName());
+	this->setEnergyPoints(clap.getEnergyPoints());
+	this->setHitPoints(clap.getHitPoints());
+	this->setAttackDamage(clap.getAttackDamage());
+	std::cout << "ClapTrap equal operator called." << std::endl;
+}
 
 ClapTrap::~ClapTrap(void)
 {
