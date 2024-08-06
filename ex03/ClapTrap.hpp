@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 21:47:02 by gabriel           #+#    #+#             */
-/*   Updated: 2024/08/05 22:16:46 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/08/06 21:03:43 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
 
 # include <string>
 
+
+/* We use the reference in copy constructor because if we do not use it
+	it will pass a copy of the object and it would call the copy constructor
+	making an infinite loop.*/
 class ClapTrap
 {
 	private:
@@ -28,6 +32,8 @@ class ClapTrap
 		int			_attack_damage;
 
 	public:
+		ClapTrap(void);
+		ClapTrap(ClapTrap const &copy);
 		ClapTrap(std::string const name);
 		~ClapTrap(void);
 		std::string	getName(void) const;
@@ -41,6 +47,9 @@ class ClapTrap
 		void	attack(const std::string& target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
+		void	operator=(ClapTrap const &clap);
+
 };
+
 
 #endif

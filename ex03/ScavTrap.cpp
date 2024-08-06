@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 23:11:44 by gabriel           #+#    #+#             */
-/*   Updated: 2024/08/05 22:17:27 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/08/06 22:01:56 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,16 @@
 #include <string>
 
 #include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap(void)
+{
+	this->setName("");
+	this->setAttackDamage(SCAVTRAP_DEFAULT_ATTACKDAMAGE);
+	this->setEnergyPoints(SCAVTRAP_DEFAULT_ENERGYPOINTS);
+	this->setHitPoints(SCAVTRAP_DEFAULT_HITPOINTS);
+	std::cout << "ScavTrap Default Constructor called." << std::endl;
+}
+
 
 ScavTrap::ScavTrap(std::string const name) : ClapTrap(name)
 {
@@ -23,9 +33,27 @@ ScavTrap::ScavTrap(std::string const name) : ClapTrap(name)
 	std::cout << "ScavTrap Constructor of " << this->getName() <<" called." << std::endl;
 }
 
+ScavTrap::ScavTrap(ScavTrap const &copy) : ClapTrap()
+{
+	this->setName(copy.getName());
+	this->setAttackDamage(copy.getAttackDamage());
+	this->setEnergyPoints(copy.getEnergyPoints());
+	this->setHitPoints(copy.getHitPoints());
+	std::cout << "ScavTrap Copy Constructor called." << std::endl;
+}
+
 ScavTrap::~ScavTrap(void)
 {
 	std::cout << "ScavTrap Destructor of " << this->getName() << " called." << std::endl;
+}
+
+void	ScavTrap::operator=(ScavTrap const &trap)
+{
+	this->setName(trap.getName());
+	this->setAttackDamage(trap.getAttackDamage());
+	this->setEnergyPoints(trap.getEnergyPoints());
+	this->setHitPoints(trap.getHitPoints());
+	std::cout << "ScavTrap Equal operator called." << std::endl;
 }
 
 void ScavTrap::attack(const std::string& target)
