@@ -23,8 +23,7 @@ ${OBJ_DIR}/%.o : %.cpp Makefile
 -include ${DEP}
 
 clean:
-	rm -f ${OBJ_DIR}/*.o
-	rm -f ${OBJ_DIR}/*.d
+	rm -rf ${OBJ_DIR}
 
 fclean: clean
 	rm -f ${NAME}
