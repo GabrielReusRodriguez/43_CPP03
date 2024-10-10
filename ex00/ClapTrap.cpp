@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 21:47:28 by gabriel           #+#    #+#             */
-/*   Updated: 2024/08/06 22:00:10 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/10/10 22:58:12 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,14 @@ ClapTrap::ClapTrap(ClapTrap const &copy)
 
 void	ClapTrap::operator=(ClapTrap const &clap)
 {
-	this->setName(clap.getName());
-	this->setEnergyPoints(clap.getEnergyPoints());
-	this->setHitPoints(clap.getHitPoints());
-	this->setAttackDamage(clap.getAttackDamage());
-	std::cout << "ClapTrap equal operator called." << std::endl;
+	if (this != &clap)
+	{
+		this->setName(clap.getName());
+		this->setEnergyPoints(clap.getEnergyPoints());
+		this->setHitPoints(clap.getHitPoints());
+		this->setAttackDamage(clap.getAttackDamage());
+		std::cout << "ClapTrap Assigment operator called." << std::endl;
+	}
 }
 
 ClapTrap::~ClapTrap(void)

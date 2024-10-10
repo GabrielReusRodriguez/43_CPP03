@@ -3,7 +3,7 @@ NAME=ex02
 CPP_FLAGS = -Wall -Werror -Wextra -std=c++98 -MMD -MP
 SRC_FILES = main	\
 			ClapTrap	\
-			DiamondTrap
+			FragTrap
 
 OBJ_DIR = ./obj
 

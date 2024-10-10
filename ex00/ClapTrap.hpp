@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 21:47:02 by gabriel           #+#    #+#             */
-/*   Updated: 2024/08/06 21:03:43 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/10/10 21:56:02 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,5 @@ class ClapTrap
 		void	operator=(ClapTrap const &clap);
 
 };
-
 
 #endif

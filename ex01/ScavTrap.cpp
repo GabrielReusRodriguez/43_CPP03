@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 23:11:44 by gabriel           #+#    #+#             */
-/*   Updated: 2024/08/06 22:01:56 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/10/10 22:56:59 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,14 @@ ScavTrap::~ScavTrap(void)
 
 void	ScavTrap::operator=(ScavTrap const &trap)
 {
-	this->setName(trap.getName());
-	this->setAttackDamage(trap.getAttackDamage());
-	this->setEnergyPoints(trap.getEnergyPoints());
-	this->setHitPoints(trap.getHitPoints());
-	std::cout << "ScavTrap Equal operator called." << std::endl;
+	if (this != &trap)
+	{
+		this->setName(trap.getName());
+		this->setAttackDamage(trap.getAttackDamage());
+		this->setEnergyPoints(trap.getEnergyPoints());
+		this->setHitPoints(trap.getHitPoints());
+		std::cout << "ScavTrap Assigment operator called." << std::endl;
+	}
 }
 
 void ScavTrap::attack(const std::string& target)

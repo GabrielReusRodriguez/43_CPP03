@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 01:18:28 by gabriel           #+#    #+#             */
-/*   Updated: 2024/08/05 22:29:06 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/10/10 22:34:08 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,13 @@ class DiamondTrap : public FragTrap, public ScavTrap
 		std::string _name;
 
 	public:
+		DiamondTrap(void);
 		DiamondTrap(std::string const name);
+		DiamondTrap(DiamondTrap const &diamond);
 		~DiamondTrap(void);
 		void	whoAmI(void);
 		void	attack(std::string const &target);
+		void	operator=(DiamondTrap const &daimond);
 };
 
 #endif

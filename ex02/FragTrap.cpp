@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 00:56:03 by gabriel           #+#    #+#             */
-/*   Updated: 2024/08/06 22:02:12 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/10/10 22:54:54 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,14 @@ FragTrap::~FragTrap(void)
 
 void	FragTrap::operator=(FragTrap const &trap)
 {
-	this->setName(trap.getName());
-	this->setAttackDamage(trap.getAttackDamage());
-	this->setEnergyPoints(trap.getEnergyPoints());
-	this->setHitPoints(trap.getHitPoints());
-	std::cout << "FragTrap Equal operator called." << std::endl;
+	if (this != &trap)
+	{
+		this->setName(trap.getName());
+		this->setAttackDamage(trap.getAttackDamage());
+		this->setEnergyPoints(trap.getEnergyPoints());
+		this->setHitPoints(trap.getHitPoints());
+		std::cout << "FragTrap Assigment operator called." << std::endl;
+	}
 }
 
 void	FragTrap::highFivesGuys(void)
